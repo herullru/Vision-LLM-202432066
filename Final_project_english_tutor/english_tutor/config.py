@@ -21,7 +21,7 @@ PIPER_EN_MODEL = os.getenv("PIPER_EN_MODEL", str(HOME / "src/models/Piper/en_US-
 
 # ---- 오디오 ----------------------------------------------------------------
 # `arecord -l` 로 확인한 마이크 번호 (노트북 예시: plughw:3,0)
-MIC_DEVICE = os.getenv("MIC_DEVICE", "plughw:3,0")
+MIC_DEVICE = os.getenv("MIC_DEVICE", "plughw:2,0")
 # 스피커를 따로 지정하려면 예: plughw:0,3  (비워두면 시스템 기본 장치)
 SPEAKER_DEVICE = os.getenv("SPEAKER_DEVICE", "")
 USE_PASUSPENDER = os.getenv("USE_PASUSPENDER", "1") == "1"   # 노트북의 pasuspender 사용 여부
