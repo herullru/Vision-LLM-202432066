@@ -126,14 +126,10 @@ class App:
             self.say_ko("음, 이건 아직 잘 모르겠어요. 다른 물건을 보여 주세요!")
             return
 
-        # 수업 순서: 한국어 이름 -> 영어 단어(천천히 2번) -> 영어 문장 -> 쉬운 설명 -> 따라 하기
-        self.say_ko(f"{lesson.ko_name}! 영어로는")
-        self.say_en(lesson.word)
-        time.sleep(0.4)
-        self.say_en(lesson.word)
+        self.say_ko(f"{lesson.ko_name}! 영어로는 {lesson.word}!")
         self.say_en(lesson.en_sentence)
-        self.say_ko(lesson.ko_text)
-        self.say_ko("따라 해 볼까요?")
+        self.say_ko("다 함께 크게 따라 해 보세요!")
+        time.sleep(1.0)
 
     # ------------------------------------------------------- 음성 스레드 --
     def listen_loop(self):
