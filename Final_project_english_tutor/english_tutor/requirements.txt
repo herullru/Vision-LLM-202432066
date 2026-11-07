@@ -1,0 +1,7 @@
+# 수업에서 이미 설치한 패키지 기준 (추가 설치 거의 없음)
+ultralytics
+opencv-python
+numpy==1.23.0
+llama-cpp-python   # CUDA 빌드 버전 (노트북 05번 참고)
+python-dotenv
+# Whisper.cpp / Piper(.piper_venv) 는 노트북 06번 C 파트 그대로 사용
