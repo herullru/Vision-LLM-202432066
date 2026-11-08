@@ -25,7 +25,7 @@ class Detector:
     def __init__(self):
         from ultralytics import YOLO
 
-        self.model = YOLO(cfg.YOLO_MODEL_PATH, task="detect")
+        self.model = YOLO("yolo11n.pt", task="detect")
         # 아이에게 알려줄 클래스만 탐지하도록 제한
         names = self.model.names
         self.class_ids = [i for i, n in names.items() if n in KID_OBJECTS]
@@ -37,6 +37,7 @@ class Detector:
             iou=cfg.YOLO_IOU,
             classes=self.class_ids,
             verbose=False,
+            device="cpu,"
         )
         result = results[0]
         out = []

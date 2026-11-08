@@ -17,17 +17,17 @@ WHISPER_MODEL = os.getenv("WHISPER_MODEL", str(HOME / "whisper.cpp/models/ggml-b
 
 PIPER_PYTHON = os.getenv("PIPER_PYTHON", str(HOME / ".piper_venv/bin/python"))
 PIPER_KO_MODEL = os.getenv("PIPER_KO_MODEL", str(HOME / "src/models/Piper/ko_KR-kss-medium.onnx"))
-PIPER_EN_MODEL = os.getenv("PIPER_EN_MODEL", str(HOME / "src/models/Piper/en_US-lessac-medium.onnx"))
+PIPER_EN_MODEL = os.getenv("PIPER_EN_MODEL", str(HOME / "src/models/Piper/us-lessac-medium.onnx"))
 
 # ---- 오디오 ----------------------------------------------------------------
 # `arecord -l` 로 확인한 마이크 번호 (노트북 예시: plughw:3,0)
-MIC_DEVICE = os.getenv("MIC_DEVICE", "plughw:2,0")
+MIC_DEVICE = os.getenv("MIC_DEVICE", "plughw:3,0")
 # 스피커를 따로 지정하려면 예: plughw:0,3  (비워두면 시스템 기본 장치)
 SPEAKER_DEVICE = os.getenv("SPEAKER_DEVICE", "")
 USE_PASUSPENDER = os.getenv("USE_PASUSPENDER", "1") == "1"   # 노트북의 pasuspender 사용 여부
 
 RECORD_SECONDS = int(os.getenv("RECORD_SECONDS", "4"))       # 한 번에 듣는 시간
-SILENCE_RMS = float(os.getenv("SILENCE_RMS", "300"))         # 이 값보다 조용하면 STT 생략
+SILENCE_RMS = float(os.getenv("SILENCE_RMS", "100"))         # 이 값보다 조용하면 STT 생략
 EN_LENGTH_SCALE = float(os.getenv("EN_LENGTH_SCALE", "1.2")) # 1.0보다 크면 천천히 읽음 (아이용)
 
 AUDIO_DIR = HOME / "src/audio"
