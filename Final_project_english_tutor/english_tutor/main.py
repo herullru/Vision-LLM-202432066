@@ -8,6 +8,13 @@
   - 음성 스레드  : 마이크 듣기 -> STT -> 질문이면 요청 발행
   - 수업 스레드  : 요청 받으면 Gemma로 수업 생성 -> TTS로 말하기
 
+  # 1. 영어 모델 (us-lessac) 다운로드
+wget -O us-lessac-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx
+wget -O us-lessac-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json
+
+# 2. 한국어 모델 (ko_KR-hyeri) 다운로드
+wget -O ko_KR-hyeri-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/ko/ko_KR/hyeri/medium/ko_KR-hyeri-medium.onnx
+wget -O ko_KR-hyeri-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/ko/ko_KR/hyeri/medium/ko_KR-hyeri-medium.onnx.json
 실행:
   python main.py --dry-run --no-voice   # 소리/마이크 없이 카메라+Gemma만 확인 ('l' 키)
   python main.py                        # 전체 실행 (음성 질문 + 'l' 키)
